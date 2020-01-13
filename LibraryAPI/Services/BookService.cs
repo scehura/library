@@ -16,17 +16,11 @@ namespace LibraryAPI.Services
             this.bookRepository = bookRepository;
         }
 
-        public string AddBook(string title, string description)
+        public Book AddBook(Book book)
         {
-            Book book = new Book
-            {
-                Title = title,
-                Description = description
-            };
-
             bookRepository.Add(book);
 
-            return book.Id; 
+            return book; 
         }
 
         public Book GetBook(string id)

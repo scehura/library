@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System.ComponentModel.DataAnnotations;
 
 namespace LibraryAPI.Models
 {
@@ -13,24 +14,11 @@ namespace LibraryAPI.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
 
-        private string _title;
-        public string Title { 
-            get {
-                return _title;
-            }
+        public string Title { get; set; }
 
-            set {
-                if (value == "")
-                {
-                    throw new ArgumentException("Title cannot be empty");
-                }
-
-                _title = value;
-            }
-        }
-
+        [Required]
         public string Description { get; set; }
 
-        public string Author { get; set; }
+        public string AuthorId { get; set; }
     }
 }

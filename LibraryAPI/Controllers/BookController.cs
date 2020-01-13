@@ -19,10 +19,21 @@ namespace LibraryAPI.Controllers
             this.bookService = bookService;
         }
 
-        [HttpGet("get/{id}")]
-        public Book GetBook(string id)
+        [HttpPost]
+        public IActionResult AddBook(Book book)
         {
-            return bookService.GetBook(id);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            return Ok(bookService.AddBook(book));
+        }
+
+        [HttpGet("get/{id}")]
+        public IActionResult GetBook(string id)
+        {
+            return Ok(bookService.GetBook(id));
         }
     }
 }
