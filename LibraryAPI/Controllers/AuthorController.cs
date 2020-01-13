@@ -60,5 +60,20 @@ namespace LibraryAPI.Controllers
 
             return Ok();
         }
+
+        [HttpDelete("remove/{id:length(24)}")]
+        public IActionResult RemoveAuthor(string id)
+        {
+            var author = authorService.GetAuthor(id);
+
+            if (author == null)
+            {
+                return NotFound();
+            }
+
+            authorService.RemoveAuthor(id);
+
+            return Ok();
+        }
     }
 }

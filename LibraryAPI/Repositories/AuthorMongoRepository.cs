@@ -30,9 +30,14 @@ namespace LibraryAPI.Repositories
             return collection.Find(author => author.Id == id).FirstOrDefault();
         }
 
-        public void Modify(string id, Author authorIn)
+        public void Update(string id, Author authorIn)
         {
             collection.ReplaceOne(author => author.Id == id, authorIn);
+        }
+
+        public void Remove(string id)
+        {
+            collection.DeleteOne(author => author.Id == id);
         }
 
         public void RemoveAll()

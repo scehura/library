@@ -31,7 +31,12 @@ namespace LibraryAPI.Services
 
         public void UpdateAuthor(string id, Author author)
         {
-            authorRepository.Modify(id, author);
+            authorRepository.Update(id, author);
+        }
+
+        public void RemoveAuthor(string id)
+        {
+            authorRepository.Remove(id);
         }
     }
 }

@@ -13,7 +13,9 @@ namespace LibraryAPI.Repositories
 
         Author GetById(string id);
 
-        void Modify(string id, Author author);
+        void Update(string id, Author author);
+
+        void Remove(string id);
 
         void RemoveAll();
     }

@@ -12,7 +12,10 @@ namespace LibraryAPI.Repositories
 
         Book GetById(string id);
 
-        // Helper method
+        void Update(string id, Book book);
+
+        void Remove(string id);
+
         void RemoveAll();
     }
 

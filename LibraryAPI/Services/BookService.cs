@@ -27,5 +27,15 @@ namespace LibraryAPI.Services
         {
             return bookRepository.GetById(id);
         }
+
+        public void UpdateBook(string id, Book book)
+        {
+            bookRepository.Update(id, book);
+        }
+
+        public void RemoveBook(string id)
+        {
+            bookRepository.Remove(id);
+        }
     }
 }

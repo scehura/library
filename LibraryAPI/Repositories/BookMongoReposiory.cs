@@ -29,6 +29,16 @@ namespace LibraryAPI.Repositories
             return collection.Find(book => book.Id == id).FirstOrDefault();
         }
 
+        public void Update(string id, Book bookIn)
+        {
+            collection.ReplaceOne(book => book.Id == id, bookIn);
+        }
+
+        public void Remove(string id)
+        {
+            collection.DeleteOne(book => book.Id == id);
+        }
+
         public void RemoveAll()
         {
             collection.DeleteMany(_ => true);
