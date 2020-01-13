@@ -12,6 +12,8 @@ namespace LibraryAPI.Repositories
 
         Book GetById(string id);
 
+        List<Book> GetBooksByAuthor(string id);
+
         void Update(string id, Book book);
 
         void Remove(string id);

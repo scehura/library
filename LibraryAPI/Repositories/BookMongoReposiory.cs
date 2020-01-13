@@ -29,6 +29,11 @@ namespace LibraryAPI.Repositories
             return collection.Find(book => book.Id == id).FirstOrDefault();
         }
 
+        public List<Book> GetBooksByAuthor(string authorId)
+        {
+            return collection.Find(book => book.AuthorId == authorId).ToList();
+        }
+
         public void Update(string id, Book bookIn)
         {
             collection.ReplaceOne(book => book.Id == id, bookIn);

@@ -19,7 +19,7 @@ namespace LibraryAPI.Controllers
             this.bookService = bookService;
         }
 
-        [HttpPost]
+        [HttpPost("add")]
         public IActionResult AddBook(Book book)
         {
             if (!ModelState.IsValid)
@@ -41,6 +41,19 @@ namespace LibraryAPI.Controllers
             }
 
             return Ok(book);
+        }
+
+        [HttpGet("get/author/{author:length(24)}")]
+        public IActionResult GetBooksByAuthor(string author)
+        {
+            var books = bookService.GetBooksByAuthor(author);
+
+            if (books == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(books);
         }
 
         [HttpPut("update/{id:length(24)}")]

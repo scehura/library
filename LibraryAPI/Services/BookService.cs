@@ -28,6 +28,11 @@ namespace LibraryAPI.Services
             return bookRepository.GetById(id);
         }
 
+        public List<Book> GetBooksByAuthor(string authorId)
+        {
+            return bookRepository.GetBooksByAuthor(authorId);
+        }
+
         public void UpdateBook(string id, Book book)
         {
             bookRepository.Update(id, book);
