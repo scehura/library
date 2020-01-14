@@ -22,12 +22,9 @@ namespace LibraryAPI.Controllers
         [HttpPost("add")]
         public IActionResult AddBook(Book book)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            bookService.AddBook(book);
 
-            return Ok(bookService.AddBook(book));
+            return Ok();
         }
 
         [HttpGet("get/{id:length(24)}")]

@@ -20,6 +20,9 @@ namespace LibraryAPI.Services
         {
             bookRepository.Add(book);
 
+            Console.WriteLine(".>>");
+            Console.WriteLine(book.Id);
+
             return book; 
         }
 

@@ -20,7 +20,6 @@ namespace LibraryAPI.Services
         public Author AddAuthor(Author author)
         {
             authorRepository.Add(author);
-
             return author;
         }
 

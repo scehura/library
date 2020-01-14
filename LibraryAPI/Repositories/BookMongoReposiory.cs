@@ -31,7 +31,7 @@ namespace LibraryAPI.Repositories
 
         public List<Book> GetBooksByAuthor(string authorId)
         {
-            return collection.Find(book => book.AuthorId == authorId).ToList();
+            return collection.Find(book => book.Author == authorId).ToList();
         }
 
         public void Update(string id, Book bookIn)

@@ -23,11 +23,6 @@ namespace LibraryAPI.Controllers
         [HttpPost("add")]
         public IActionResult AddAuthor(Author author)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             authorService.AddAuthor(author);
 
             return Ok(author);
@@ -47,7 +42,7 @@ namespace LibraryAPI.Controllers
         }
 
         [HttpPut("update/{id:length(24)}")]
-        public IActionResult UpdateAuthor(string id)
+        public IActionResult UpdateAuthor(string id, Author authorIn)
         {
             var author = authorService.GetAuthor(id);
 
@@ -56,7 +51,7 @@ namespace LibraryAPI.Controllers
                 return NotFound();
             }
 
-            authorService.UpdateAuthor(id, author);
+            authorService.UpdateAuthor(id, authorIn);
 
             return Ok();
         }
