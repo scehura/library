@@ -2,8 +2,8 @@
 
 ### Dodanie autora
 
-endpoint: `/author/add`
-body: 
+- endpoint: `/author/add`
+- body: 
 ```json
 {
 	"firstName": "Tom",
