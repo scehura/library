@@ -1,7 +1,7 @@
 ﻿# Endpointy
 
-### Dodanie autora
-#### Request
+## Dodanie autora
+### Request
 - URL: `/author/add`
 - Payload:
 
@@ -10,11 +10,11 @@
 | `firstName` | `string` | Wymagane |
 | `lastName` | `string` | Wymagane |
 
-### Pobranie autora
-#### Request
+## Pobranie autora
+### Request
 - URL: `/author/:id`
 
-#### Response
+### Response
 - Payload:
 
 | Pole | Typ |
@@ -23,8 +23,8 @@
 | `firstName` | `string` |
 | `lastName` | `string` |
 
-### Aktualizacja autora
-#### Request
+## Aktualizacja autora
+### Request
 - URL: `/author/update/:id`
 - Payload:
 
@@ -33,6 +33,6 @@
 | `firstName` | `string` |
 | `lastName` | `string` |
 
-### Usunięcie autora
-#### Request
+## Usunięcie autora
+### Request
 - URL: `/author/:id`
