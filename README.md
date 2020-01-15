@@ -11,6 +11,24 @@
 | `firstName` | `string` | Wymagane |
 | `lastName` | `string` | Wymagane |
 
+## Pobranie autorów
+### Request
+- URL: `/author/list`
+- Meroga: `GET`
+- Query:
+
+| Nazwa | Type |
+|-------|------|
+| `page` | `int` |
+| `limit` | `int` |
+
+## Response
+| Pole | Type |
+|------|------|
+| `page` | `int` |
+| `numberPages` | `int` |
+| `authors` | `Author` |
+
 ## Pobranie autora
 ### Request
 - URL: `/author/:id`
@@ -53,8 +71,45 @@
 | `title` | `string` | Wymagane |
 | `description` | `string` | Wymagane |
 | `author` | `ObjectId` | Wymagane |
-| `pages` | `number` | |
+| `pages` | `int` | |
 | `publicationDate` | `date` | |
+
+## Pobranie książek
+### Request
+- URL: `/book/list`
+- Meroga: `GET`
+- Query:
+
+| Nazwa | Type |
+|-------|------|
+| `page` | `int` |
+| `limit` | `int` |
+
+## Response
+| Pole | Type |
+|------|------|
+| `page` | `int` |
+| `numberPages` | `int` |
+| `books` | `Author` |
+
+
+## Pobranie autorów autora
+### Request
+- URL: `/author/list/author/:id`
+- Meroga: `GET`
+- Query:
+
+| Nazwa | Type |
+|-------|------|
+| `page` | `int` |
+| `limit` | `int` |
+
+## Response
+| Pole | Type |
+|------|------|
+| `page` | `int` |
+| `numberPages` | `int` |
+| `authors` | `Author` |
 
 ## Pobranie książki
 ### Request
