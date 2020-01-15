@@ -19,7 +19,7 @@
 
 | Pole | Typ |
 |------|-----|
-| `_id` | `ObjectId` |
+| `id` | `ObjectId` |
 | `firstName` | `string` |
 | `lastName` | `string` |
 
@@ -60,6 +60,7 @@
 
 | Pole | Typ |
 |------|-----|
+| `id` | `ObjectId` |
 | `title` | `string` |
 | `description` | `string` |
 | `author` | `ObjectId` |
