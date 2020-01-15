@@ -2,12 +2,10 @@
 
 ### Dodanie autora
 #### Request
-- url: `/author/add`
-- body: 
-```json
-{
-	"firstName": "",
-	"lastName": ""
-}
-```
+- URL: `/author/add`
+- Payload
 
+| Pole | Typ | Wymagane |
+|------|-----|----------|
+| `firstName` | `string` | Tak |
+| `lastName` | `string` | Tak |
