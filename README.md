@@ -27,7 +27,7 @@
 |------|------|
 | `page` | `int` |
 | `numberPages` | `int` |
-| `authors` | `Author` |
+| `authors` | `Author[]` |
 
 ## Pobranie autora
 ### Request
@@ -90,12 +90,12 @@
 |------|------|
 | `page` | `int` |
 | `numberPages` | `int` |
-| `books` | `Book` |
+| `books` | `Book[]` |
 
 
 ## Pobranie książek autora
 ### Request
-- URL: `/author/list/author/:id`
+- URL: `/book/list/author/:id`
 - Meroga: `GET`
 - Query:
 
@@ -109,7 +109,7 @@
 |------|------|
 | `page` | `int` |
 | `numberPages` | `int` |
-| `authors` | `Book` |
+| `authors` | `Book[]` |
 
 ## Pobranie książki
 ### Request
