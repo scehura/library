@@ -3,6 +3,7 @@
 ## Dodanie autora
 ### Request
 - URL: `/author/add`
+- Metoda: `POST`
 - Payload:
 
 | Pole | Typ | Komentarz |
@@ -13,6 +14,7 @@
 ## Pobranie autora
 ### Request
 - URL: `/author/:id`
+- Metoda: `GET`
 
 ### Response
 - Payload:
@@ -26,6 +28,7 @@
 ## Aktualizacja autora
 ### Request
 - URL: `/author/update/:id`
+- Metoda: `PUT`
 - Payload:
 
 | Pole | Typ |
@@ -36,11 +39,13 @@
 ## Usunięcie autora
 ### Request
 - URL: `/author/:id`
+- Metoda: `DELETE`
 
 
 ## Dodanie książki
 ### Request
 - URL: `/book/add`
+- Metoda: `POST`
 - Payload:
 
 | Pole | Typ | Komentarz |
@@ -54,6 +59,7 @@
 ## Pobranie książki
 ### Request
 - URL: `/book/:id`
+- Metoda: `GET`
 
 ### Response
 - Payload:
@@ -70,6 +76,7 @@
 ## Aktualizacja książki
 ### Request
 - URL: `/book/update/:id`
+- METODA: `PUT`
 - Payload:
 
 | Pole | Typ |
@@ -83,3 +90,4 @@
 ## Usunięcie książki
 ### Request
 - URL: `/book/:id`
+- Metoda: `DELETE`
