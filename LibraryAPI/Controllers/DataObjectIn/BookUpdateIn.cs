@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace LibraryAPI.Models.DTO
+namespace LibraryAPI.Controllers.DataObjectIn
 {
-    public class BookDTO
+    public class BookUpdateIn
     {
         public string Title { get; set; }
 

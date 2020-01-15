@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using LibraryAPI.Services;
 using LibraryAPI.Models;
-using LibraryAPI.Models.DTO;
+using LibraryAPI.Controllers.DataObjectIn;
 
 namespace LibraryAPI.Controllers
 {
@@ -55,7 +50,7 @@ namespace LibraryAPI.Controllers
         }
 
         [HttpPut("update/{id:length(24)}")]
-        public IActionResult UpdateBook(string id, BookDTO bookIn)
+        public IActionResult UpdateBook(string id, BookUpdateIn bookIn)
         {
             var book = bookService.GetBook(id);
 
@@ -64,7 +59,7 @@ namespace LibraryAPI.Controllers
                 return NotFound();
             }
 
-            book.Parse<BookDTO>(bookIn);
+            book.Parse<BookUpdateIn>(bookIn);
 
             bookService.UpdateBook(id, book);
 

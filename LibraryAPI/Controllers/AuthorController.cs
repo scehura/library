@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using LibraryAPI.Controllers.DataObjectIn;
 using LibraryAPI.Models;
-using LibraryAPI.Models.DTO;
 using LibraryAPI.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MongoDB.Bson;
 
 namespace LibraryAPI.Controllers
 {
@@ -50,7 +44,7 @@ namespace LibraryAPI.Controllers
         }
 
         [HttpPut("update/{id:length(24)}")]
-        public IActionResult UpdateAuthor(string id, AuthorDTO authorIn)
+        public IActionResult UpdateAuthor(string id, AuthorUpdateIn authorIn)
         {
             var author = authorService.GetAuthor(id);
 
@@ -59,7 +53,7 @@ namespace LibraryAPI.Controllers
                 return NotFound();
             }
 
-            author.Parse<AuthorDTO>(authorIn);
+            author.Parse<AuthorUpdateIn>(authorIn);
 
             authorService.UpdateAuthor(id, author);
 
