@@ -76,7 +76,7 @@
 ## Aktualizacja książki
 ### Request
 - URL: `/book/update/:id`
-- METODA: `PUT`
+- Metoda: `PUT`
 - Payload:
 
 | Pole | Typ |
