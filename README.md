@@ -90,10 +90,10 @@
 |------|------|
 | `page` | `int` |
 | `numberPages` | `int` |
-| `books` | `Author` |
+| `books` | `Book` |
 
 
-## Pobranie autorów autora
+## Pobranie książek autora
 ### Request
 - URL: `/author/list/author/:id`
 - Meroga: `GET`
@@ -109,7 +109,7 @@
 |------|------|
 | `page` | `int` |
 | `numberPages` | `int` |
-| `authors` | `Author` |
+| `authors` | `Book` |
 
 ## Pobranie książki
 ### Request
