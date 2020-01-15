@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LibraryAPI.Models
 {
-    public class Author
+    public class Author : BaseModel<Author>
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

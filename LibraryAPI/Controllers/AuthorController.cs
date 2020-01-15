@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LibraryAPI.Models;
+using LibraryAPI.Models.DTO;
 using LibraryAPI.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -42,7 +43,7 @@ namespace LibraryAPI.Controllers
         }
 
         [HttpPut("update/{id:length(24)}")]
-        public IActionResult UpdateAuthor(string id, Author authorIn)
+        public IActionResult UpdateAuthor(string id, AuthorDTO authorIn)
         {
             var author = authorService.GetAuthor(id);
 
@@ -51,7 +52,9 @@ namespace LibraryAPI.Controllers
                 return NotFound();
             }
 
-            authorService.UpdateAuthor(id, authorIn);
+            author.Parse<AuthorDTO>(authorIn);
+
+            authorService.UpdateAuthor(id, author);
 
             return Ok();
         }

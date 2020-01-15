@@ -2,25 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-using System.ComponentModel.DataAnnotations;
 
-namespace LibraryAPI.Models
+namespace LibraryAPI.Models.DTO
 {
-    public class Book : BaseModel<Book>
+    public class BookDTO
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
-
-        [Required]
         public string Title { get; set; }
 
-        [Required]
         public string Description { get; set; }
 
-        [Required]
         public string Author { get; set; }
 
         public int Pages { get; set; }

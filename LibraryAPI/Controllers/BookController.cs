@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using LibraryAPI.Services;
 using LibraryAPI.Models;
+using LibraryAPI.Models.DTO;
 
 namespace LibraryAPI.Controllers
 {
@@ -54,16 +55,18 @@ namespace LibraryAPI.Controllers
         }
 
         [HttpPut("update/{id:length(24)}")]
-        public IActionResult UpdateBook(string id)
+        public IActionResult UpdateBook(string id, BookDTO bookIn)
         {
-            var author = bookService.GetBook(id);
+            var book = bookService.GetBook(id);
 
-            if (author == null)
+            if (book == null)
             {
                 return NotFound();
             }
 
-            bookService.UpdateBook(id, author);
+            book.Parse<BookDTO>(bookIn);
+
+            bookService.UpdateBook(id, book);
 
             return Ok();
         }
