@@ -10,7 +10,7 @@
 | `firstName` | `string` | Wymagane |
 | `lastName` | `string` | Wymagane |
 
-### Pobranie konkretnego autora
+### Pobranie autora
 #### Request
 - URL: `/author/:id`
 
@@ -23,7 +23,7 @@
 | `firstName` | `string` |
 | `lastName` | `string` |
 
-### Aktualizacja konkretnego autora
+### Aktualizacja autora
 #### Request
 - URL: `/author/update/:id`
 - Payload:
@@ -32,3 +32,7 @@
 |------|-----|
 | `firstName` | `string` |
 | `lastName` | `string` |
+
+### Usunięcie autora
+#### Request
+- URL: `/author/:id`
