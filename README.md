@@ -1,12 +1,13 @@
 ﻿# Endpointy
 
 ### Dodanie autora
-
-- endpoint: `/author/add`
+#### Request
+- url: `/author/add`
 - body: 
 ```json
 {
-	"firstName": "Tom",
+	"firstName": "",
 	"lastName": ""
 }
 ```
+
