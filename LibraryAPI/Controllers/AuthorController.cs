@@ -29,10 +29,17 @@ namespace LibraryAPI.Controllers
             return Ok(author);
         }
 
+        [HttpGet("list")]
+        public IActionResult AuthorList([FromQuery(Name = "page")] int page, [FromQuery(Name = "limit")] int limit)
+        {
+            return Ok(authorService.AuthorList(page, limit));
+        }
+
         [HttpGet("get/{id:length(24)}")]
         public IActionResult GetAuthor(string id)
         {
             var author = authorService.GetAuthor(id);
+
 
             if (author == null)
             {

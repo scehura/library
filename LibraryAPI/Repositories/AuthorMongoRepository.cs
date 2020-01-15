@@ -25,9 +25,21 @@ namespace LibraryAPI.Repositories
             collection.InsertOne(author);
         }
 
+        public List<Author> List(int page, int limit)
+        {
+            var skip = page * limit - limit;
+
+            return collection.Find(author => true).Skip(skip).Limit(limit).ToList();
+        }
+
         public Author GetById(string id)
         {
             return collection.Find(author => author.Id == id).FirstOrDefault();
+        }
+
+        public long Count()
+        {
+            return collection.CountDocuments(author => true);
         }
 
         public void Update(string id, Author authorIn)

@@ -11,7 +11,11 @@ namespace LibraryAPI.Repositories
     {
         void Add(Author author);
 
+        List<Author> List(int page, int limit);
+
         Author GetById(string id);
+
+        long Count();
 
         void Update(string id, Author author);
 

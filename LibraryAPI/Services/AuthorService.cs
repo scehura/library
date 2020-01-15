@@ -1,5 +1,6 @@
 ﻿using LibraryAPI.Models;
 using LibraryAPI.Repositories;
+using LibraryAPI.Utils;
 using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,23 @@ namespace LibraryAPI.Services
         public Author GetAuthor(string id)
         {
             return authorRepository.GetById(id);
+        }
+
+        public object AuthorList(int page, int limit)
+        {
+            long size = authorRepository.Count();
+
+            if (page < 1) page = 1;
+            if (limit < 1) limit = 1;
+
+            var authors = authorRepository.List(page, limit);
+
+            return new
+            {
+                page,
+                numberPages = Util.CountPages(size, limit),
+                authors
+            };
         }
 
         public void UpdateAuthor(string id, Author author)
