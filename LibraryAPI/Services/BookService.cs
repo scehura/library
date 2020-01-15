@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MongoDB.Bson;
 using LibraryAPI.Repositories;
 using LibraryAPI.Models;
+using LibraryAPI.Utils;
 
 namespace LibraryAPI.Services
 {
@@ -28,9 +29,38 @@ namespace LibraryAPI.Services
             return bookRepository.GetById(id);
         }
 
-        public List<Book> GetBooksByAuthor(string authorId)
+        public object BooksList(int page, int limit)
         {
-            return bookRepository.GetBooksByAuthor(authorId);
+            long size = bookRepository.Count();
+
+            if (page < 1) page = 1;
+            if (limit < 1) limit = 1;
+
+            var authors = bookRepository.List(page, limit);
+
+            return new
+            {
+                page,
+                numberPages = Util.CountPages(size, limit),
+                authors
+            };
+        }
+
+        public object BooksListByAuthor(string id, int page, int limit)
+        {
+            long size = bookRepository.CountByAuthor(id);
+
+            if (page < 1) page = 1;
+            if (limit < 1) limit = 1;
+
+            var books = bookRepository.ListByAuthor(id, page, limit);
+
+            return new
+            {
+                page,
+                numberPages = Util.CountPages(size, limit),
+                books
+            };
         }
 
         public void UpdateBook(string id, Book book)

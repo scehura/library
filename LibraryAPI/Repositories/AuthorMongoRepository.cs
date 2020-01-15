@@ -27,7 +27,7 @@ namespace LibraryAPI.Repositories
 
         public List<Author> List(int page, int limit)
         {
-            var skip = page * limit - limit;
+            int skip = page * limit - limit;
 
             return collection.Find(author => true).Skip(skip).Limit(limit).ToList();
         }

@@ -12,7 +12,13 @@ namespace LibraryAPI.Repositories
 
         Book GetById(string id);
 
-        List<Book> GetBooksByAuthor(string id);
+        List<Book> List(int page, int limit);
+
+        List<Book> ListByAuthor(string id, int page, int limit);
+
+        long Count();
+
+        long CountByAuthor(string id);
 
         void Update(string id, Book book);
 

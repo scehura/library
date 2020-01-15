@@ -7,13 +7,13 @@ namespace LibraryAPI.Models
 {
     public abstract class BaseModel<T>
     {
-        public void Parse<T2>(T2 obj)
+        public void Parse<T>(T obj)
         {
             foreach (var prop in obj.GetType().GetProperties())
             {
                 if (prop.GetValue(obj) != null)
                 {
-                    this.GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(obj));
+                    GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(obj));
                 }
             }
         }

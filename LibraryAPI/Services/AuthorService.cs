@@ -29,7 +29,7 @@ namespace LibraryAPI.Services
             return authorRepository.GetById(id);
         }
 
-        public object AuthorList(int page, int limit)
+        public object AuthorsList(int page, int limit)
         {
             long size = authorRepository.Count();
 

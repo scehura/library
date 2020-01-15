@@ -23,6 +23,19 @@ namespace LibraryAPI.Controllers
             return Ok();
         }
 
+
+        [HttpGet("list")]
+        public IActionResult BooksListByAuthor([FromQuery(Name = "page")] int page, [FromQuery(Name = "limit")] int limit)
+        {
+            return Ok(bookService.BooksList(page, limit));
+        }
+
+        [HttpGet("list/author/{author:length(24)}")]
+        public IActionResult BooksListByAuthor(string author, [FromQuery(Name = "page")] int page, [FromQuery(Name = "limit")] int limit)
+        {
+            return Ok(bookService.BooksListByAuthor(author, page, limit));
+        }
+
         [HttpGet("get/{id:length(24)}")]
         public IActionResult GetBook(string id)
         {
@@ -36,19 +49,6 @@ namespace LibraryAPI.Controllers
             return Ok(book);
         }
 
-        [HttpGet("get/author/{author:length(24)}")]
-        public IActionResult GetBooksByAuthor(string author)
-        {
-            var books = bookService.GetBooksByAuthor(author);
-
-            if (books == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(books);
-        }
-
         [HttpPut("update/{id:length(24)}")]
         public IActionResult UpdateBook(string id, BookUpdateIn bookIn)
         {
@@ -59,7 +59,7 @@ namespace LibraryAPI.Controllers
                 return NotFound();
             }
 
-            book.Parse<BookUpdateIn>(bookIn);
+            book.Parse(bookIn);
 
             bookService.UpdateBook(id, book);
 

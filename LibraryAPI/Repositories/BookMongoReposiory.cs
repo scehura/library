@@ -24,14 +24,34 @@ namespace LibraryAPI.Repositories
             collection.InsertOne(book);
         }
 
+        public List<Book> List(int page, int limit)
+        {
+            int skip = page * limit - limit;
+
+            return collection.Find(book => true).Skip(skip).Limit(limit).ToList();
+        }
+
+        public List<Book> ListByAuthor(string id, int page, int limit)
+        {
+            int skip = page * limit - limit;
+
+            return collection.Find(book => book.Author == id).Skip(skip).Limit(limit).ToList();
+        }
+
+
         public Book GetById(string id)
         {
             return collection.Find(book => book.Id == id).FirstOrDefault();
         }
 
-        public List<Book> GetBooksByAuthor(string authorId)
+        public long Count()
         {
-            return collection.Find(book => book.Author == authorId).ToList();
+            return collection.CountDocuments(author => true);
+        }
+
+        public long CountByAuthor(string id)
+        {
+            return collection.CountDocuments(author => author.Id == id);
         }
 
         public void Update(string id, Book bookIn)

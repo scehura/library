@@ -24,9 +24,9 @@ namespace LibraryAPI.Controllers
         }
 
         [HttpGet("list")]
-        public IActionResult AuthorList([FromQuery(Name = "page")] int page, [FromQuery(Name = "limit")] int limit)
+        public IActionResult AuthorsList([FromQuery(Name = "page")] int page, [FromQuery(Name = "limit")] int limit)
         {
-            return Ok(authorService.AuthorList(page, limit));
+            return Ok(authorService.AuthorsList(page, limit));
         }
 
         [HttpGet("get/{id:length(24)}")]
@@ -53,7 +53,7 @@ namespace LibraryAPI.Controllers
                 return NotFound();
             }
 
-            author.Parse<AuthorUpdateIn>(authorIn);
+            author.Parse(authorIn);
 
             authorService.UpdateAuthor(id, author);
 
