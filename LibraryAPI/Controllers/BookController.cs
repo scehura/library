@@ -18,6 +18,16 @@ namespace LibraryAPI.Controllers
         [HttpPost("add")]
         public IActionResult AddBook(Book book)
         {
+            if (book == null)
+            {
+                return BadRequest();
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             bookService.AddBook(book);
 
             return Ok();
@@ -25,7 +35,7 @@ namespace LibraryAPI.Controllers
 
 
         [HttpGet("list")]
-        public IActionResult BooksListByAuthor([FromQuery(Name = "page")] int page, [FromQuery(Name = "limit")] int limit)
+        public IActionResult BooksList([FromQuery(Name = "page")] int page, [FromQuery(Name = "limit")] int limit)
         {
             return Ok(bookService.BooksList(page, limit));
         }

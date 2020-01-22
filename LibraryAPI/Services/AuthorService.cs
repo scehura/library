@@ -1,5 +1,6 @@
 ﻿using LibraryAPI.Models;
 using LibraryAPI.Repositories;
+using LibraryAPI.Services.DTO;
 using LibraryAPI.Utils;
 using MongoDB.Bson;
 using System;
@@ -29,7 +30,7 @@ namespace LibraryAPI.Services
             return authorRepository.GetById(id);
         }
 
-        public object AuthorsList(int page, int limit)
+        public ListDTO<List<Author>> AuthorsList(int page, int limit)
         {
             long size = authorRepository.Count();
 
@@ -38,12 +39,7 @@ namespace LibraryAPI.Services
 
             var authors = authorRepository.List(page, limit);
 
-            return new
-            {
-                page,
-                numberPages = Util.CountPages(size, limit),
-                authors
-            };
+            return new ListDTO<List<Author>>(authors, page, Util.CountPages(size, limit));
         }
 
         public void UpdateAuthor(string id, Author author)
