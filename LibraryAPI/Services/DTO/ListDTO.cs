@@ -8,14 +8,14 @@ namespace LibraryAPI.Services.DTO
     public class ListDTO<T>
     {
         public int Page { get; set; }
-        public int NumberPages { get; set; }
+        public int Pages { get; set; }
         public T Data { get; set; }
 
-        public ListDTO(T data, int page, int numberPages)
+        public ListDTO(T data, int page, int pages)
         {
             Data = data;
             Page = page;
-            NumberPages = numberPages;
+            Pages = pages;
         }
     }
 }

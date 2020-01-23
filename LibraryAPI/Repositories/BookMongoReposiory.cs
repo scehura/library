@@ -51,7 +51,7 @@ namespace LibraryAPI.Repositories
 
         public long CountByAuthor(string id)
         {
-            return collection.CountDocuments(author => author.Id == id);
+            return collection.CountDocuments(book => book.Author == id);
         }
 
         public void Update(string id, Book bookIn)
