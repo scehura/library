@@ -77,7 +77,7 @@ namespace LibraryAPI.Test.Controllers
         public void AddBookWithNullData()
         {
             controller
-                .Calling(c => c.AddBook())
+                .Calling(c => c.AddBook(new Book()))
                 .ShouldReturn()
                 .BadRequest();
         }
@@ -88,7 +88,7 @@ namespace LibraryAPI.Test.Controllers
             var book = BookControllerTestHelper.AddOneBook(bookRepository);
 
             controller
-                .Calling(c => c.BooksList())
+                .Calling(c => c.BookList(1,1))
                 .ShouldReturn()
                 .Ok(result => result
                     .WithModelOfType<ListDTO<List<Book>>>()
@@ -113,7 +113,7 @@ namespace LibraryAPI.Test.Controllers
             int limit = 2;
 
             controller
-                .Calling(c => c.BooksList(page, limit))
+                .Calling(c => c.BookList(page, limit))
                 .ShouldReturn()
                 .Ok(result => result
                     .WithModelOfType<ListDTO<List<Book>>>()
@@ -139,7 +139,7 @@ namespace LibraryAPI.Test.Controllers
             int limit = 2;
 
             controller
-                .Calling(c => c.BooksList(page, limit))
+                .Calling(c => c.BookList(page, limit))
                 .ShouldReturn()
                 .Ok(result => result
                     .WithModelOfType<ListDTO<List<Book>>>()
@@ -166,7 +166,7 @@ namespace LibraryAPI.Test.Controllers
             int limit = 2;
 
             controller
-                .Calling(c => c.BooksListByAuthor(author, page, limit))
+                .Calling(c => c.BookListByAuthor(author, page, limit))
                 .ShouldReturn()
                 .Ok(result => result
                     .WithModelOfType<ListDTO<List<Book>>>()
@@ -193,7 +193,7 @@ namespace LibraryAPI.Test.Controllers
             int limit = 2;
 
             controller
-                .Calling(c => c.BooksListByAuthor(author, page, limit))
+                .Calling(c => c.BookListByAuthor(author, page, limit))
                 .ShouldReturn()
                 .Ok(result => result
                     .WithModelOfType<ListDTO<List<Book>>>()
@@ -230,17 +230,6 @@ namespace LibraryAPI.Test.Controllers
             var bookResult = bookRepository.GetById(book.Id);
 
             Assert.AreEqual(bookResult.Title, title);
-        }
-
-        [Test]
-        public void UpdateBookWithNullData()
-        {
-            var book = BookControllerTestHelper.AddOneBook(bookRepository);
-
-            controller
-                .Calling(c => c.UpdateBook(book.Id))
-                .ShouldReturn()
-                .BadRequest();
         }
 
         [Test]

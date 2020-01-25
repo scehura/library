@@ -35,13 +35,13 @@ namespace LibraryAPI.Controllers
         }
 
         [HttpGet("list")]
-        public IActionResult BooksList([FromQuery(Name = "page")] int page, [FromQuery(Name = "limit")] int limit)
+        public IActionResult BookList([FromQuery(Name = "page")] int page, [FromQuery(Name = "limit")] int limit)
         {
             return Ok(bookService.BooksList(page, limit));
         }
 
         [HttpGet("list/author/{author:length(24)}")]
-        public IActionResult BooksListByAuthor(string author, [FromQuery(Name = "page")] int page, [FromQuery(Name = "limit")] int limit)
+        public IActionResult BookListByAuthor(string author, [FromQuery(Name = "page")] int page, [FromQuery(Name = "limit")] int limit)
         {
             return Ok(bookService.BooksListByAuthor(author, page, limit));
         }
@@ -79,9 +79,9 @@ namespace LibraryAPI.Controllers
         [HttpDelete("remove/{id:length(24)}")]
         public IActionResult RemoveBook(string id)
         {
-            var author = bookService.GetBook(id);
+            var book = bookService.GetBook(id);
 
-            if (author == null)
+            if (book == null)
             {
                 return NotFound();
             }

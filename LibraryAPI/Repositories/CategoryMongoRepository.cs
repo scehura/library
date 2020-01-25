@@ -32,9 +32,29 @@ namespace LibraryAPI.Repositories
             return collection.Find(category => true).Skip(skip).Limit(limit).ToList();
         }
 
+        public Category GetById(string id)
+        {
+            return collection.Find(category => category.Id == id).FirstOrDefault();
+        }
+
         public long Count()
         {
             return collection.CountDocuments(category => true);
+        }
+
+        public void Update(string id, Category categoryIn)
+        {
+            collection.ReplaceOne(category => category.Id == id, categoryIn);
+        }
+
+        public void Remove(string id)
+        {
+            collection.DeleteOne(category => category.Id == id);
+        }
+
+        public void RemoveAll()
+        {
+            collection.DeleteMany(_ => true);
         }
     }
 }

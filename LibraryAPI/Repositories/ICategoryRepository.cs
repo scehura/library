@@ -12,6 +12,14 @@ namespace LibraryAPI.Repositories
 
         List<Category> List(int page, int limit);
 
+        Category GetById(string id);
+
         long Count();
+
+        void Update(string id, Category category);
+
+        void Remove(string id);
+
+        void RemoveAll();
     }
 }

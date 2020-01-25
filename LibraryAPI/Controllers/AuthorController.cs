@@ -35,7 +35,7 @@ namespace LibraryAPI.Controllers
         }
 
         [HttpGet("list")]
-        public IActionResult AuthorsList([FromQuery(Name = "page")] int page, [FromQuery(Name = "limit")] int limit)
+        public IActionResult AuthorList([FromQuery(Name = "page")] int page, [FromQuery(Name = "limit")] int limit)
         {
             return Ok(authorService.AuthorsList(page, limit));
         }

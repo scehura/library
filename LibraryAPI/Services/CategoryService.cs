@@ -34,5 +34,20 @@ namespace LibraryAPI.Services
 
             return new ListDTO<List<Category>>(categories, page, Util.CountPages(size, limit));
         }
+
+        public Category GetCategory(string id)
+        {
+            return categoryRepository.GetById(id);
+        }
+
+        public void UpdateCategory(string id, Category category)
+        {
+            categoryRepository.Update(id, category);
+        }
+
+        public void RemoveCategory(string id)
+        {
+            categoryRepository.Remove(id);
+        }
     }
 }
