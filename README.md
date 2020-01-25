@@ -26,8 +26,8 @@
 | Pole | Type |
 |------|------|
 | `page` | `int` |
-| `numberPages` | `int` |
-| `authors` | `Author[]` |
+| `pages` | `int` |
+| `data` | `Author[]` |
 
 ## Pobranie autora
 ### Request
@@ -71,6 +71,9 @@
 | `title` | `string` | Wymagane |
 | `description` | `string` | Wymagane |
 | `author` | `ObjectId` | Wymagane |
+| `category` | `Category[]` | |
+| `isbn` | `string` | |
+| `isbn` | `type` | |
 | `pages` | `int` | |
 | `publicationDate` | `date` | |
 
@@ -89,8 +92,8 @@
 | Pole | Type |
 |------|------|
 | `page` | `int` |
-| `numberPages` | `int` |
-| `books` | `Book[]` |
+| `pages` | `int` |
+| `data` | `Book[]` |
 
 
 ## Pobranie książek autora
@@ -108,8 +111,8 @@
 | Pole | Type |
 |------|------|
 | `page` | `int` |
-| `numberPages` | `int` |
-| `authors` | `Book[]` |
+| `pages` | `int` |
+| `data` | `Book[]` |
 
 ## Pobranie książki
 ### Request
@@ -125,7 +128,10 @@
 | `title` | `string` |
 | `description` | `string` |
 | `author` | `ObjectId` |
-| `pages` | `number` |
+| `author` | `Category[]` |
+| `pages` | `int` |
+| `isbn` | `string` |
+| `type` | `string` |
 | `publicationDate` | `date` |
 
 ## Aktualizacja książki
@@ -139,7 +145,10 @@
 | `title` | `string` |
 | `description` | `string` |
 | `author` | `ObjectId` |
-| `pages` | `number` |
+| `author` | `Category[]` |
+| `pages` | `int` |
+| `isbn` | `string` |
+| `type` | `string` |
 | `publicationDate` | `date` |
 
 ## Usunięcie książki
