@@ -129,7 +129,7 @@
 | `author` | `ObjectId` | Wymagane |
 | `category` | `Category[]` | |
 | `isbn` | `string` | |
-| `isbn` | `type` | |
+| `type` | `string` | |
 | `pages` | `int` | |
 | `publicationDate` | `date` | |
 
