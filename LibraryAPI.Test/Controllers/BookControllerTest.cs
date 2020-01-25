@@ -25,7 +25,7 @@ namespace LibraryAPI.Test.Controllers
         [SetUp]
         public void Setup()
         {
-            bookRepository = new BookMongoReposiory(TestHelper.GetMongoOptions());
+            bookRepository = new BookMongoRepository(TestHelper.GetMongoOptions());
             bookService = new BookService(bookRepository);
 
             bookRepository.RemoveAll();

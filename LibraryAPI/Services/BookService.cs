@@ -13,6 +13,7 @@ namespace LibraryAPI.Services
     public class BookService
     {
         private readonly IBookRepository bookRepository;
+
         public BookService(IBookRepository bookRepository)
         {
             this.bookRepository = bookRepository;

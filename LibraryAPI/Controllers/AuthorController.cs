@@ -17,14 +17,13 @@ namespace LibraryAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult AddAuthor()
-        {
-            return BadRequest();
-        }
-
-        [HttpPost("add")]
         public IActionResult AddAuthor(Author author)
         {
+            if (author == null)
+            {
+                return BadRequest();
+            }
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

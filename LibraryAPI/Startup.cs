@@ -34,10 +34,12 @@ namespace LibraryAPI
 
             services.AddTransient<BookService>();
             services.AddTransient<AuthorService>();
+            services.AddTransient<CategoryService>();
 
 
-            services.AddTransient<IBookRepository, BookMongoReposiory>();
+            services.AddTransient<IBookRepository, BookMongoRepository>();
             services.AddTransient<IAuthorRepository, AuthorMongoRepository>();
+            services.AddTransient<ICategoryRepository, CategoryMongoRepository>();
 
             services.AddControllers();
         }

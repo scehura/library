@@ -31,5 +31,10 @@ namespace LibraryAPI.Repositories
 
             return collection.Find(category => true).Skip(skip).Limit(limit).ToList();
         }
+
+        public long Count()
+        {
+            return collection.CountDocuments(category => true);
+        }
     }
 }

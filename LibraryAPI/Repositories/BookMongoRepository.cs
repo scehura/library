@@ -8,10 +8,11 @@ using Microsoft.Extensions.Options;
 
 namespace LibraryAPI.Repositories
 {
-    public class BookMongoReposiory: IBookRepository
+    public class BookMongoRepository: IBookRepository
     {
         private readonly IMongoCollection<Book> collection;
-        public BookMongoReposiory(IOptions<Settings> settings)
+
+        public BookMongoRepository(IOptions<Settings> settings)
         {
             var client = new MongoClient(settings.Value.ConnectionString);
             var database = client.GetDatabase(settings.Value.Database);

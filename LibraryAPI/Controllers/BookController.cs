@@ -17,14 +17,13 @@ namespace LibraryAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult AddBook()
-        {
-            return BadRequest();
-        }
-
-        [HttpPost("add")]
         public IActionResult AddBook(Book book)
         {
+            if (book == null)
+            {
+                return BadRequest();
+            }
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -33,12 +32,6 @@ namespace LibraryAPI.Controllers
             bookService.AddBook(book);
 
             return Ok();
-        }
-
-        [HttpGet("list")]
-        public IActionResult BooksList()
-        {
-            return Ok(bookService.BooksList(1, 1));
         }
 
         [HttpGet("list")]
@@ -64,12 +57,6 @@ namespace LibraryAPI.Controllers
             }
 
             return Ok(book);
-        }
-
-        [HttpPut("update/{id:length(24)}")]
-        public IActionResult UpdateBook(string id)
-        {
-            return BadRequest();
         }
 
         [HttpPut("update/{id:length(24)}")]

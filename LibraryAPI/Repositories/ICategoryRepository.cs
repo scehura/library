@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace LibraryAPI.Repositories
 {
-    interface ICategoryRepository
+    public interface ICategoryRepository
     {
         void Add(Category category);
 
         List<Category> List(int page, int limit);
+
+        long Count();
     }
 }

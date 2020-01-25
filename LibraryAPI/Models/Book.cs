@@ -23,6 +23,8 @@ namespace LibraryAPI.Models
         [Required]
         public string Author { get; set; }
 
+        public string Category { get; set; }
+
         public int Pages { get; set; }
 
         public DateTime PublicationDate { get; set; }
