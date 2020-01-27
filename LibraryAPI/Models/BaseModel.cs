@@ -7,6 +7,10 @@ namespace LibraryAPI.Models
 {
     public abstract class BaseModel
     {
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+        public DateTime UpdatedAt { get; set; } = DateTime.Now;
+
         public void Parse<T>(T obj)
         {
             foreach (var prop in obj.GetType().GetProperties())
@@ -16,6 +20,8 @@ namespace LibraryAPI.Models
                     GetType().GetProperty(prop.Name).SetValue(this, prop.GetValue(obj));
                 }
             }
+
+            UpdatedAt = DateTime.Now;
         }
     }
 }
