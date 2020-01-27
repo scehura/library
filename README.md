@@ -185,7 +185,7 @@
 | `title` | `string` |
 | `description` | `string` |
 | `author` | `ObjectId` |
-| `author` | `Category[]` |
+| `category` | `Category[]` |
 | `pages` | `int` |
 | `isbn` | `string` |
 | `type` | `string` |
@@ -203,7 +203,7 @@
 | `title` | `string` |
 | `description` | `string` |
 | `author` | `ObjectId` |
-| `author` | `Category[]` |
+| `category` | `Category[]` |
 | `pages` | `int` |
 | `isbn` | `string` |
 | `type` | `string` |
