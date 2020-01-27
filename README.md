@@ -131,6 +131,7 @@
 | `isbn` | `string` | |
 | `type` | `string` | |
 | `pages` | `int` | |
+| `bookCover` | `string[]` | |
 | `publicationDate` | `date` | |
 
 ## Pobranie książek
@@ -188,6 +189,7 @@
 | `pages` | `int` |
 | `isbn` | `string` |
 | `type` | `string` |
+| `bookCover` | `string[]` |
 | `publicationDate` | `date` |
 
 ## Aktualizacja książki
@@ -205,6 +207,7 @@
 | `pages` | `int` |
 | `isbn` | `string` |
 | `type` | `string` |
+| `bookCover` | `string[]` |
 | `publicationDate` | `date` |
 
 ## Usunięcie książki
