@@ -31,6 +31,8 @@ namespace LibraryAPI.Models
 
         public string Type { get; set; }
 
+        public List<string> BookCover { get; set; }
+
         public DateTime PublicationDate { get; set; }
     }
 }

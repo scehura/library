@@ -13,7 +13,15 @@ namespace LibraryAPI.Controllers.DataObjectIn
 
         public string Author { get; set; }
 
+        public List<string> Category { get; set; }
+
         public int Pages { get; set; }
+
+        public string ISBN { get; set; }
+
+        public string Type { get; set; }
+
+        public List<string> BookCover { get; set; }
 
         public DateTime PublicationDate { get; set; }
     }
