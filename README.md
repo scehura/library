@@ -59,6 +59,62 @@
 - URL: `/author/:id`
 - Metoda: `DELETE`
 
+## Dodanie kategorii
+### Request
+- URL: `/category/add`
+- Metoda: `POST`
+- Payload:
+
+| Pole | Typ | Komentarz |
+|------|-----|----------|
+| `name` | `string` | Wymagane |
+
+## Pobranie kategorii
+### Request
+- URL: `/category/list`
+- Meroga: `GET`
+- Query:
+
+| Nazwa | Type |
+|-------|------|
+| `page` | `int` |
+| `limit` | `int` |
+
+## Response
+| Pole | Type |
+|------|------|
+| `page` | `int` |
+| `pages` | `int` |
+| `data` | `Category[]` |
+
+## Pobranie kategorii
+### Request
+- URL: `/category/:id`
+- Metoda: `GET`
+
+### Response
+- Payload:
+
+| Pole | Typ |
+|------|-----|
+| `id` | `ObjectId` |
+| `name` | `string` |
+
+## Aktualizacja kategorii
+### Request
+- URL: `/category/update/:id`
+- Metoda: `PUT`
+- Payload:
+
+| Pole | Typ |
+|------|-----|
+| `name` | `string` |
+
+## Usunięcie kategorii
+### Request
+- URL: `/category/:id`
+- Metoda: `DELETE`
+
 
 ## Dodanie książki
 ### Request
@@ -73,7 +129,7 @@
 | `author` | `ObjectId` | Wymagane |
 | `category` | `Category[]` | |
 | `isbn` | `string` | |
-| `isbn` | `type` | |
+| `type` | `string` | |
 | `pages` | `int` | |
 | `publicationDate` | `date` | |
 
