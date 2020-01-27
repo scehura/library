@@ -42,6 +42,7 @@ namespace LibraryAPI
             services.AddTransient<IAuthorRepository, AuthorMongoRepository>();
             services.AddTransient<ICategoryRepository, CategoryMongoRepository>();
 
+            services.AddCors();
             services.AddControllers();
         }
 
@@ -52,6 +53,10 @@ namespace LibraryAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(builder =>
+                builder.AllowAnyOrigin());
+                //builder.WithOrigins("http://localhost:55294"));
 
             app.UseRouting();
 
