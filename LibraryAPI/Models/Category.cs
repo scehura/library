@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LibraryAPI.Models
 {
-    public class Category : BaseModel<Category>
+    public class Category : BaseModel
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

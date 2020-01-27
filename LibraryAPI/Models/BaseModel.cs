@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace LibraryAPI.Models
 {
-    public abstract class BaseModel<T>
+    public abstract class BaseModel
     {
         public void Parse<T>(T obj)
         {

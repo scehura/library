@@ -40,9 +40,9 @@ namespace LibraryAPI.Test.Controllers
 
             controller
                 .Calling(c => c.AddAuthor(author))
-                //.ShouldHave()
-                //.InvalidModelState()
-                //.AndAlso()
+                .ShouldHave()
+                .InvalidModelState()
+                .AndAlso()
                 .ShouldReturn()
                 .BadRequest();
         }

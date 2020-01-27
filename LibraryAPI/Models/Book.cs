@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LibraryAPI.Models
 {
-    public class Book : BaseModel<Book>
+    public class Book : BaseModel
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
