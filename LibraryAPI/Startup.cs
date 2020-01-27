@@ -55,8 +55,13 @@ namespace LibraryAPI
             }
 
             app.UseCors(builder =>
-                builder.AllowAnyOrigin());
+            {
                 //builder.WithOrigins("http://localhost:55294"));
+
+                builder.AllowAnyOrigin();
+                builder.AllowAnyMethod();
+                builder.AllowAnyHeader();
+            });
 
             app.UseRouting();
 
