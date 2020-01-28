@@ -9,10 +9,15 @@ namespace LibraryAPI.Test.Controllers
 {
     class BookControllerTestHelper
     {
-        public static List<Book> Books(string author)
+        public static string FakeId()
         {
-            return new List<Book> {
-                 new Book
+            return ObjectId.GenerateNewId().ToString();
+        }
+
+        public static List<object> Books(string author)
+        {
+            return new List<object> {
+                 new
                  {
                     Title = "Władca Pierścieni: Drużyna Pierścienia",
                     Description = "Powieść high fantasy J.R.R. Tolkiena, której akcja rozgrywa się w mitologicznym świecie Śródziemia.",
@@ -21,7 +26,7 @@ namespace LibraryAPI.Test.Controllers
                     Author = author
                 },
 
-                new Book
+                new
                 {
                     Title = "Władca Pierścieni: Dwie wieże",
                     Description = "Drugi tom powieści pt. Władca Pierścieni autorstwa J.R.R. Tolkiena.",
@@ -30,7 +35,7 @@ namespace LibraryAPI.Test.Controllers
                     Author = author
                 },
 
-                new Book
+                new
                 {
                     Title = "T",
                     Description = "",
@@ -43,7 +48,9 @@ namespace LibraryAPI.Test.Controllers
 
         public static Book AddOneBook(IBookRepository bookRepository)
         {
-            var book = Books(ObjectId.GenerateNewId().ToString())[0];
+            var book = new Book();
+
+            book.Parse(Books(FakeId())[0]);
 
             bookRepository.Add(book);
 
@@ -52,16 +59,30 @@ namespace LibraryAPI.Test.Controllers
 
         public static void AddBooks(IBookRepository bookRepository)
         {
-            var books = Books(ObjectId.GenerateNewId().ToString());
+            var books = Books(FakeId());
 
-            books.ForEach(item => bookRepository.Add(item));
+            books.ForEach(item =>
+            {
+                var book = new Book();
+
+                book.Parse(item);
+
+                bookRepository.Add(book);
+            });
         }
 
         public static void AddBooks(IBookRepository bookRepository, string author)
         {
             var books = Books(author);
 
-            books.ForEach(item => bookRepository.Add(item));
+            books.ForEach(item =>
+            {
+                var book = new Book();
+
+                book.Parse(item);
+
+                bookRepository.Add(book);
+            });
         }
     }
 }
