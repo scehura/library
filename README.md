@@ -1,8 +1,80 @@
 ﻿# Endpointy
+ 
+ ## Dodanie biblioteki
+### Request
+- URL: `/library/add`
+- Metoda: `POST`
+- Payload:
+
+| Pole | Typ | Komentarz |
+|------|-----|----------|
+| `name` | `string` | Wymagane |
+| `email` | `string` | |
+| `city` | `string` | |
+| `street` | `string` | |
+| `houseNumber` | `string` | |
+| `phone` | `string` | |
+
+## Pobranie bibliotek
+### Request
+- URL: `/library/list`
+- Meroga: `GET`
+- Query:
+
+| Nazwa | Type |
+|-------|------|
+| `page` | `int` |
+| `limit` | `int` |
+
+## Response
+| Pole | Type |
+|------|------|
+| `page` | `int` |
+| `pages` | `int` |
+| `data` | `Library[]` |
+
+## Pobranie biblioteki
+### Request
+- URL: `/library/:id`
+- Metoda: `GET`
+
+### Response
+- Payload:
+
+| Pole | Typ |
+|------|-----|
+| `id` | `ObjectId` |
+| `name` | `string` |
+| `email` | `string` |
+| `city` | `string` |
+| `street` | `string` |
+| `houseNumber` | `string` |
+| `phone` | `string` |
+
+## Aktualizacja biblioteki
+### Request
+- URL: `/library/update/:id`
+- Metoda: `PUT`
+- Payload:
+
+| Pole | Typ |
+|------|-----|
+| `name` | `string` |
+| `email` | `string` |
+| `city` | `string` |
+| `street` | `string` |
+| `houseNumber` | `string` |
+| `phone` | `string` |
+
+## Usunięcie bibloteki
+### Request
+- URL: `/library/:id`
+- Metoda: `DELETE`
+
 
 ## Dodanie autora
 ### Request
-- URL: `/author/add`
+- URL: `/library/add`
 - Metoda: `POST`
 - Payload:
 
@@ -13,7 +85,7 @@
 
 ## Pobranie autorów
 ### Request
-- URL: `/author/list`
+- URL: `/library/list`
 - Meroga: `GET`
 - Query:
 
@@ -31,7 +103,7 @@
 
 ## Pobranie autora
 ### Request
-- URL: `/author/:id`
+- URL: `/library/:id`
 - Metoda: `GET`
 
 ### Response
@@ -45,7 +117,7 @@
 
 ## Aktualizacja autora
 ### Request
-- URL: `/author/update/:id`
+- URL: `/library/update/:id`
 - Metoda: `PUT`
 - Payload:
 
