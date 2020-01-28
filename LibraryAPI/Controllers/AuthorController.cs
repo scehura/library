@@ -37,7 +37,7 @@ namespace LibraryAPI.Controllers
         [HttpGet("list")]
         public IActionResult AuthorList([FromQuery(Name = "page")] int page, [FromQuery(Name = "limit")] int limit)
         {
-            return Ok(authorService.AuthorsList(page, limit));
+            return Ok(authorService.AuthorList(page, limit));
         }
 
         [HttpGet("get/{id:length(24)}")]

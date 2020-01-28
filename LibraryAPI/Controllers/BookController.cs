@@ -37,13 +37,13 @@ namespace LibraryAPI.Controllers
         [HttpGet("list")]
         public IActionResult BookList([FromQuery(Name = "page")] int page, [FromQuery(Name = "limit")] int limit)
         {
-            return Ok(bookService.BooksList(page, limit));
+            return Ok(bookService.BookList(page, limit));
         }
 
         [HttpGet("list/author/{author:length(24)}")]
         public IActionResult BookListByAuthor(string author, [FromQuery(Name = "page")] int page, [FromQuery(Name = "limit")] int limit)
         {
-            return Ok(bookService.BooksListByAuthor(author, page, limit));
+            return Ok(bookService.BookListByAuthor(author, page, limit));
         }
 
         [HttpGet("get/{id:length(24)}")]

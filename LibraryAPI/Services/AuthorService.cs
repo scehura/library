@@ -20,10 +20,9 @@ namespace LibraryAPI.Services
             this.authorRepository = authorRepository;
         }
 
-        public Author AddAuthor(Author author)
+        public void AddAuthor(Author author)
         {
             authorRepository.Add(author);
-            return author;
         }
 
         public Author GetAuthor(string id)
@@ -31,7 +30,7 @@ namespace LibraryAPI.Services
             return authorRepository.GetById(id);
         }
 
-        public ListDTO<List<Author>> AuthorsList(int page, int limit)
+        public ListDTO<List<Author>> AuthorList(int page, int limit)
         {
             long size = authorRepository.Count();
 

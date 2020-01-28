@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,11 +19,9 @@ namespace LibraryAPI.Services
             this.bookRepository = bookRepository;
         }
 
-        public Book AddBook(Book book)
+        public void AddBook(Book book)
         {
             bookRepository.Add(book);
-
-            return book; 
         }
 
         public Book GetBook(string id)
@@ -31,7 +29,7 @@ namespace LibraryAPI.Services
             return bookRepository.GetById(id);
         }
 
-        public ListDTO<List<Book>> BooksList(int page, int limit)
+        public ListDTO<List<Book>> BookList(int page, int limit)
         {
             long size = bookRepository.Count();
 
@@ -43,7 +41,7 @@ namespace LibraryAPI.Services
             return new ListDTO<List<Book>>(books, page, Util.CountPages(size, limit));
         }
 
-        public ListDTO<List<Book>> BooksListByAuthor(string authorId, int page, int limit)
+        public ListDTO<List<Book>> BookListByAuthor(string authorId, int page, int limit)
         {
             long size = bookRepository.CountByAuthor(authorId);
 
