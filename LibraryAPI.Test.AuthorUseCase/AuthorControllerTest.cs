@@ -219,9 +219,9 @@ namespace LibraryAPI.Test.AuthorUseCase
                 .ShouldReturn()
                 .Ok();
 
-            var bookResult = authorRepository.GetById(author.Id);
+            var result = authorRepository.GetById(author.Id);
 
-            Assert.AreEqual(bookResult.FirstName, firstName);
+            Assert.AreEqual(result.FirstName, firstName);
         }
 
         [Test]
@@ -240,9 +240,9 @@ namespace LibraryAPI.Test.AuthorUseCase
                 .ShouldReturn()
                 .Ok();
 
-            var bookResult = authorRepository.GetById(author.Id);
+            var result = authorRepository.GetById(author.Id);
 
-            Assert.IsNull(bookResult);
+            Assert.IsNull(result);
         }
     }
 }

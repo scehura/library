@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace LibraryAPI.Test.AuthorUseCase
+namespace LibraryAPI.Test.CategoryUseCase
 {
     public class TestHelper
     {
