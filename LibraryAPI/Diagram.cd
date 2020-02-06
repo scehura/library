@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LibraryAPI.Controllers.AuthorController">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAACAAAgAAAAgAAAAAAAAABAIAAAAAAA=</HashCode>
+      <FileName>Controllers\AuthorController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibraryAPI.Controllers.BookController">
+    <Position X="2.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BIBAAAAAAAAAAAAAACAAAAAAAACAAAAAAAAEAAAAAAI=</HashCode>
+      <FileName>Controllers\BookController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibraryAPI.Controllers.CategoryController">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAQAAAAAAAAAAgAAAAAAgAAAAAAQAAAAAAg=</HashCode>
+      <FileName>Controllers\CategoryController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibraryAPI.Controllers.LibraryController">
+    <Position X="7.75" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAQAAAAAABAAAAgoAAA=</HashCode>
+      <FileName>Controllers\LibraryController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
